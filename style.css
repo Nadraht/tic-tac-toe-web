@@ -1,0 +1,259 @@
+/* -------------------------------
+   Global Styles
+---------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/* -------------------------------
+   Game Container
+---------------------------------- */
+.game-container {
+  text-align: center;
+  margin: 30px auto 0px;
+  background: #ffffff1a;
+  padding: 40px 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  width: 90%;
+  max-width: 450px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* -------------------------------
+   Header
+---------------------------------- */
+.game-container h1 a {
+  text-decoration: none;
+  color: #ffcc00;
+  font-size: 2.3rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.game-container h1 a:hover {
+  color: #fff;
+}
+
+/* -------------------------------
+   Difficulty Section
+---------------------------------- */
+.level {
+  margin-top: 20px;
+}
+
+.level p {
+  margin: 10px 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.level h2 {
+  margin-top: 20px;
+  color: #ffcc00;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Difficulty links */
+.level a {
+  text-decoration: none;
+  background-color: #ffcc00;
+  color: #1f1c2c;
+  padding: 10px 25px;
+  border-radius: 8px;
+  display: inline-block;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.level a:hover {
+  background-color: #fff;
+  color: #1f1c2c;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #ffcc00;
+}
+
+/* Restart Button (for level pages) */
+#resetBtn {
+  background: #ff5c5c;
+  color: white;
+  border: none;
+  margin-top: 30px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#resetBtn:hover {
+  background: #ff3030;
+  transform: scale(1.05);
+}
+
+/* Page transition */
+body.fade-out {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Button click effect */
+.level a.clicked {
+  transform: scale(0.95);
+  transition: transform 0.2s;
+}
+
+
+/* -------------------------------
+   Footer
+---------------------------------- */
+footer {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  opacity: 0.85;
+  text-align: center;
+  padding: 15px;
+}
+
+footer a {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* -------------------------------
+   RESPONSIVENESS
+---------------------------------- */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .game-container {
+    max-width: 400px;
+    padding: 30px 20px;
+  }
+
+  .game-container h1 a {
+    font-size: 2rem;
+  }
+
+  .level a {
+    padding: 8px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .game-container {
+    width: 100%;
+    padding: 25px 15px;
+    border-radius: 15px;
+  }
+
+  .game-container h1 a {
+    font-size: 1.8rem;
+  }
+
+  .level h2 {
+    font-size: 1.1rem;
+  }
+
+  .level a {
+    width: 80%;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  footer {
+    margin-top: 30px;
+    padding-bottom: 20px;
+    font-size: 0.8rem;
+  }
+}
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.board div {
+  background-color: #fff;
+  color: #1f1c2c;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.board div:hover {
+  background-color: #ffcc00;
+  transform: scale(1.05);
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .board {
+    grid-template-columns: repeat(3, 90px);
+    grid-template-rows: repeat(3, 90px);
+    gap: 8px;
+  }
+
+  .board div {
+    font-size: 1.8rem;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  .board {
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(3, 80px);
+    gap: 6px;
+  }
+
+  .board div {
+    font-size: 1.5rem;
+  }
+}
